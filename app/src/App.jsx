@@ -39,10 +39,12 @@ const App = () => {
 
   const searchFood = (e) => {
     const searchValue = e.target.value;
-    console.log(searchValue);
+    // console.log(searchValue);
 
-    if(searchValue === "")
+    if(searchValue === ""){
       setFilterData(null);
+      return;
+    }
 
     const filter = data?.filter((food) => food.name.toLowerCase().includes(searchValue.toLowerCase()));
     setFilterData(filter);
